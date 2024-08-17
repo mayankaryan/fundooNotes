@@ -13,12 +13,24 @@ import {FormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { HeaderComponent } from './dashboard/header/header.component';
+import { NavbarComponent } from './dashboard/navbar/navbar.component';
+import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
+import { NotesPageComponent } from './dashboard/notes-page/notes-page.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent,
+    NavbarComponent,
+    SidebarComponent,
+    NotesPageComponent
   ],
   imports: [
     BrowserModule,
@@ -29,8 +41,11 @@ import {MatDividerModule} from '@angular/material/divider';
     MatFormFieldModule,
     FormsModule,
     MatButtonModule,
+    MatCheckboxModule,
     MatIconModule,
+    MatToolbarModule,
     MatDividerModule,
+    MatSidenavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -28,6 +28,7 @@ body {
 .signin-container {
     width: 50%;
     padding-top: 4em;
+    position: relative;
     // display: inline-flex;
     // border: 1px solid red;   
 }
@@ -49,6 +50,13 @@ body {
     background: rgb(228, 228, 247);
     display: inline;
 }
+.button-container {
+  position: absolute;
+  bottom: 3em;
+  right: 3em;
+  // display: inline-flex;
+}
+
 
 mat-form-field{
     width: 90%;
@@ -81,10 +89,19 @@ section {
   
   .example-button-row {
     display: table-cell;
+    justify-content: center;
     max-width: 600px;
     border-radius: 5em;
-    border: 1px solid black ;
-    margin: 2em;
+    color: white;
+    // border: 1px solid rgb(240, 9, 9) ;
+    // background: blue;
+    // margin: 2em;
+  }
+  .bg-blue{
+    background: blue;
+  }
+  .bg-blue button{
+    color: white;
   }
   
   .example-button-row .mat-mdc-button-base {
@@ -93,7 +110,7 @@ section {
   
   .example-flex-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
   }
   
