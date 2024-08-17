@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,5 +8,14 @@ import { Component } from '@angular/core';
 })
 
 export class SidebarComponent {
-  showFiller = false;
+  buttonClicked:boolean = false;
+
+  constructor(private userService: UserService) {}
+
+  ngOnInit() {
+    this.userService.buttonClick$.subscribe(() => {
+      this.buttonClicked = !this.buttonClicked;
+      // console.log(this.buttonClicked);
+  });
+  }
 }

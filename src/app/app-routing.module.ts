@@ -2,18 +2,20 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { NotesPageComponent } from './dashboard/notes-page/notes-page.component';
 import { HeaderComponent } from './dashboard/header/header.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { NotesComponent } from './dashboard/notes/notes.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {
     path: 'dashboard', 
-    component: NotesPageComponent,
+    component: DashboardComponent,
     children: [
-      {path: 'header', 
-        component: HeaderComponent
+      {
+        path: 'notes',
+        component: NotesComponent,
       }
     ]
   }

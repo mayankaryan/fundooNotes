@@ -1,0 +1,18 @@
+
+<div class="note-cnt">
+    <div class="take-note">
+        <input #takeNote type="text" placeholder="Take a note..." value={{desc}}>
+        <button (click)="addNote(takeNote.value)">
+            <mat-icon>light</mat-icon>
+        </button>
+        <mat-icon>brush</mat-icon>          
+        <mat-icon>image_none</mat-icon>
+    </div>
+
+    <div class="note-cards">
+        <div class="singleCard" *ngFor="let note of notes">
+            <p>{{note.description}}</p>
+        </div>
+
+    </div>
+</div>

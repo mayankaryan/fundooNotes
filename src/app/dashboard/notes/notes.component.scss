@@ -1,0 +1,37 @@
+
+.note-cnt {
+    border: 1px solid red;
+    display: inline-block;
+    margin: auto;
+    text-align: right;
+    padding: 0.5em;
+    width: 75%;
+}
+
+.take-note {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    height: 3em;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 0 2em 5em 0;
+    padding-right: 2em;
+}   
+.take-note input {
+    width: 75%;
+    font-size: 16px;
+    color: rgb(88, 88, 88);
+    margin-left: 1em;
+    border: transparent;
+    outline: none;
+    // border: 1px solid black;
+}
+
+.singleCard {
+    display: flexbox;
+    flex-direction: row ;
+  border: 1px solid black;
+  width: 100px;
+}

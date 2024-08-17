@@ -3,38 +3,26 @@
 <div class="sidebar-cnt">
     <div class="gap">
         <mat-icon>lightbulb_outline</mat-icon>
-    </div>
-    <div class="gap">
-        <mat-icon>notifications_none</mat-icon>
-    </div>
-    <div class="gap">
-        <mat-icon>label_outline</mat-icon>
-    </div>
-    <div class="gap">
-        <mat-icon>edit</mat-icon>
-    </div>
-    <div class="gap">
-        <mat-icon>archive</mat-icon>
-    </div>
-    <div class="gap">
-        <mat-icon>delete_outline</mat-icon>
-    </div>
-
-    <mat-drawer-container class="example-container" autosize>
-        <mat-drawer #drawer class="example-sidenav" mode="side">
-          <p>Auto-resizing sidenav</p>
-          <!-- @if (showFiller) {
-            <p>Lorem, ipsum dolor sit amet consectetur.</p>
-          } -->
-          <button (click)="showFiller = !showFiller" mat-raised-button>
-            Toggle extra text
-          </button>
-        </mat-drawer>
-      </mat-drawer-container>
-
-      <div class="example-sidenav-content">
-        <button type="button" mat-button (click)="drawer.toggle()">
-          Toggle sidenav
-        </button>
+        <span *ngIf="buttonClicked">Notes</span>
       </div>
+      <div class="gap">
+        <mat-icon>notifications_none</mat-icon>
+        <span *ngIf="buttonClicked">Reminders</span>
+      </div>
+      <div class="gap">
+        <mat-icon>label_outline</mat-icon>
+        <span *ngIf="buttonClicked">Labels</span>
+      </div>
+      <div class="gap">
+        <mat-icon>edit</mat-icon>
+        <span *ngIf="buttonClicked">Edit Label</span>
+      </div>
+      <div class="gap">
+        <mat-icon>archive</mat-icon>
+        <span *ngIf="buttonClicked">Archive</span>
+      </div>
+      <div class="gap">
+        <mat-icon>delete_outline</mat-icon>
+        <span *ngIf="buttonClicked">Trash</span>
+    </div>
 </div>

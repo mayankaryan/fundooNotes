@@ -1,13 +1,28 @@
 
 .sidebar-cnt {
-    display: flex;
-    flex-direction: column;
-    margin-left: 1em;    
+  display: inline-flex;
+  flex-direction: column;  
 }
 
 .gap {
-    margin: 1em;
-}   
+    margin-left: 0;
+    border-radius: 0 5em 5em 0 ;
+    padding: 1.5em 2em;
+    display: inline-flex;
+    // background: gray;
+  }   
+  .gap:hover {
+    background: rgba(250, 223, 105, 0.523);
+  }
+  .gap span {
+    
+    display: inline;
+    margin: 3px 0 0 30px;
+
+    width: 10em;
+    font-size: 16px;
+}
+
 
 .example-container {
     width: 500px;

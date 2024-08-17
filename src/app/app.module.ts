@@ -17,9 +17,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { HeaderComponent } from './dashboard/header/header.component';
 import { NavbarComponent } from './dashboard/navbar/navbar.component';
 import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
-import { NotesPageComponent } from './dashboard/notes-page/notes-page.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { NotesComponent } from './dashboard/notes/notes.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     HeaderComponent,
     NavbarComponent,
     SidebarComponent,
-    NotesPageComponent
+    DashboardComponent,
+    NotesComponent
   ],
   imports: [
     BrowserModule,
