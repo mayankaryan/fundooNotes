@@ -35,6 +35,7 @@ appTitle(title:string) {
   else if(title == 'Edit Label') this.clc_edit = true;
   else if(title == 'Archive') this.clc_archive = true;
   else if(title == 'Trash') this.clc_trash = true;
+  
   this.userService.changeAppTitle(title);
 }
 
