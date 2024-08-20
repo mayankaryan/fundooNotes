@@ -2,37 +2,37 @@
 
 <div class="sidebar-cnt">
   <button (click)="appTitle('Notes')">
-    <div class="gap">
+    <div class="gap" [ngClass]="{'click-component':clc_note == true}">
       <mat-icon>lightbulb_outline</mat-icon>
       <span *ngIf="buttonClicked">Notes</span>
     </div>
   </button>
   <button (click)="appTitle('Reminders')">
-    <div class="gap">
+    <div class="gap" [ngClass]="{'click-component':clc_reminder == true}">
       <mat-icon>notifications_none</mat-icon>
       <span *ngIf="buttonClicked">Reminders</span>
     </div>
   </button>
   <button (click)="appTitle('Label')">
-    <div class="gap">
+    <div class="gap" [ngClass]="{'click-component':clc_label == true}">
       <mat-icon>label_outline</mat-icon>
       <span *ngIf="buttonClicked">Labels</span>
     </div>
   </button>
   <button (click)="appTitle('Edit Label')">
-    <div class="gap">
+    <div class="gap" [ngClass]="{'click-component':clc_edit == true}">
       <mat-icon>edit</mat-icon>
       <span *ngIf="buttonClicked">Edit Label</span>
     </div>
   </button>
   <button (click)="appTitle('Archive')">
-    <div class="gap">
+    <div class="gap" [ngClass]="{'click-component':clc_archive == true}">
       <mat-icon>archive</mat-icon>
       <span *ngIf="buttonClicked">Archive</span>
     </div>
   </button>
   <button (click)="appTitle('Trash')">
-    <div class="gap">
+    <div class="gap" [ngClass]="{'click-component':clc_trash == true}">
       <mat-icon>delete_outline</mat-icon>
       <span *ngIf="buttonClicked">Trash</span>
     </div>  
