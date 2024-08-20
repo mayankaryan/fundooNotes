@@ -17,5 +17,9 @@ export class SidebarComponent {
       this.buttonClicked = !this.buttonClicked;
       // console.log(this.buttonClicked);
   });
-  }
+}
+appTitle(title:string) {
+  // console.log(title);
+  this.userService.changeAppTitle(title);
+}
 }
