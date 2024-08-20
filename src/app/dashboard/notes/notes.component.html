@@ -1,18 +1,26 @@
 
 <div class="note-cnt">
-    <div class="take-note">
-        <input #takeNote type="text" placeholder="Take a note..." value={{desc}}>
+    <div *ngIf="inputExpnToggle" class="take-note">
+        <button class="input-btn" (click)="expandInput()">
+            <input #takeNote class="take-note-input" type="text" placeholder="Take a note..." value={{desc}}>
+        </button>
         <button (click)="addNote(takeNote.value)">
-            <mat-icon>light</mat-icon>
+            <mat-icon>check_box</mat-icon>
         </button>
         <mat-icon>brush</mat-icon>          
         <mat-icon>image_none</mat-icon>
     </div>
-
-    <div class="note-cards">
-        <div class="singleCard" *ngFor="let note of notes">
-            <p>{{note.description}}</p>
-        </div>
-
+    <div *ngIf="!inputExpnToggle" class="exp-take-note">
+        <input class="take-note-input" type="text" placeholder="Title">
+        <textarea name="input" id="" placeholder="Take a note..." autofocus></textarea>
     </div>
+</div>
+
+<div class="note-cards">
+    <div class="singleCard" *ngFor="let note of noteList">
+        <p>{{note.title}}
+        <br>
+        {{note.description}}</p>
+    </div>
+
 </div>

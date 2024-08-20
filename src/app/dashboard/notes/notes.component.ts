@@ -1,14 +1,34 @@
-import { Component } from '@angular/core';
+import { HttpClient, HttpSentEvent } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/services/http/http.service';
+import { error } from 'winston';
 
 @Component({
   selector: 'app-notes',
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.scss']
 })
-export class NotesComponent {
+export class NotesComponent implements OnInit {
 
   notes:any[] = [];
   desc:string = "";
+  noteList : any;
+  inputExpnToggle: boolean = true;
+
+
+  constructor(private httpService: HttpService) {}
+  
+  ngOnInit(): void {
+    this.httpService.getAllNotes().subscribe({
+      next: (res:any) => {
+        this.noteList = res.data.data;
+        console.log(this.noteList[0]);
+      },
+      error: (err:any) => {
+        console.log(err);
+      }
+    })
+  }
   
   addNote(content:string) {
     if(content != "") {
@@ -18,5 +38,9 @@ export class NotesComponent {
     }
   }
 
+  expandInput() {
+    this.inputExpnToggle = !this.inputExpnToggle;
+    console.log(this.inputExpnToggle);
+  }
 
 }

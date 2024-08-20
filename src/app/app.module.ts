@@ -21,6 +21,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { NotesComponent } from './dashboard/notes/notes.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import { NotesComponent } from './dashboard/notes/notes.component';
     MatToolbarModule,
     MatDividerModule,
     MatSidenavModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

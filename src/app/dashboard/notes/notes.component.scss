@@ -1,11 +1,12 @@
 
 .note-cnt {
-    border: 1px solid red;
+    // border: 1px solid red;
     display: inline-block;
-    margin: auto;
+    margin-top: 2em;
     text-align: right;
     padding: 0.5em;
     width: 75%;
+    position: absolute;
 }
 
 .take-note {
@@ -16,22 +17,78 @@
     height: 3em;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin: 0 2em 5em 0;
+    margin: 0 2em 0 0;
     padding-right: 2em;
-}   
-.take-note input {
-    width: 75%;
+    border: 1px solid black;
+}  
+.exp-take-note {
+    border: 1px solid black;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+    width: 85%;
+    max-height: 30em;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 0 2em 0 0;
+    padding: 1em;
+    border: 1px solid black;
+    overflow: auto;
+}
+.exp-take-note textarea {
+    // border: none;
+    outline: none;
     font-size: 16px;
     color: rgb(88, 88, 88);
-    margin-left: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.take-note button {
+    border: none;
+    background: none;
+}
+
+.input-btn {
+    width: 75%;
+    height:  -webkit-fill-available;
+}
+.take-note-input {
+    width:  -webkit-fill-available;
+    font-size: 16px;
+    color: rgb(88, 88, 88);
+    // margin-left: 1em;
     border: transparent;
     outline: none;
+    border: 1px solid black;
+}
+
+
+.note-cards {
     // border: 1px solid black;
+    display: inline-flex;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+    width: 80%;
+    margin-top: 8em;
+    position: absolute;
 }
 
 .singleCard {
-    display: flexbox;
-    flex-direction: row ;
-  border: 1px solid black;
-  width: 100px;
+    // border: 1px solid black;
+    margin: 1em;
+    padding: 1em;
+    width: 26%;
+    min-height: 4em;
+    max-height: 15em;
+    border-radius: 5px;
+    font-size: 16px;
+    color: rgb(88, 88, 88);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    display: flex;
+    flex-wrap: wrap;
+
+    word-wrap: break-word;
+    overflow: hidden;
+    text-align: left;
 }
