@@ -13,6 +13,15 @@
     <div *ngIf="!inputExpnToggle" class="exp-take-note">
         <input class="take-note-input" type="text" placeholder="Title">
         <textarea name="input" id="" placeholder="Take a note..." autofocus></textarea>
+
+        <div class="btn-cnt">
+            <button><mat-icon>image</mat-icon></button>
+            <button><mat-icon>archive</mat-icon></button>
+            <button><mat-icon>more_vert</mat-icon></button>
+            <button><mat-icon>undo</mat-icon></button>
+            <button><mat-icon>redo-outline</mat-icon></button>
+            <button (click)="expandInput()"><mat-icon>close</mat-icon></button>
+        </div>
     </div>
 </div>
 
