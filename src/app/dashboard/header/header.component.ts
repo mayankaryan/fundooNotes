@@ -8,6 +8,8 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class HeaderComponent {
   title: string = "Fundoo";
+  searchQuery : string = "";
+  
   constructor(private userService: UserService) {}
 
   ngOnInit() {
@@ -17,12 +19,14 @@ export class HeaderComponent {
       }
     })
   }
-
   toggle_sidenav() {
     this.userService.sidebarToggle();
   }
 
-  
+  searchNote(){
+    // console.log(this.searchQuery);
+    this.userService.searchNote(this.searchQuery);
+  }
 
 
 

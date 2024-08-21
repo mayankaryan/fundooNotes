@@ -13,6 +13,8 @@ export class UserService {
   private app_title = new Subject<string> () ;
   appTitle$ = this.app_title.asObservable();
 
+  private src_qry = new Subject<string> ();
+  srcQry$ = this.src_qry.asObservable();
 
   sidebarToggle() {
     this.toggle_button.next();
@@ -20,6 +22,11 @@ export class UserService {
   changeAppTitle(title:string) {
     // console.log('at service' + title);
     this.app_title.next(title);
+  }
+
+  searchNote(searchQuery: string) {
+    // console.log('user service: ' + searchQuery);
+    return this.src_qry.next(searchQuery);
   }
   
 }

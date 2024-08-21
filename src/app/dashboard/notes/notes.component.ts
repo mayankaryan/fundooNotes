@@ -1,6 +1,7 @@
 import { HttpClient, HttpSentEvent } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http/http.service';
+import { UserService } from 'src/app/services/user/user.service';
 import { error } from 'winston';
 
 @Component({
@@ -17,7 +18,7 @@ export class NotesComponent implements OnInit {
   keyWordNote : string = "";
 
 
-  constructor(private httpService: HttpService) { }
+  constructor(private httpService: HttpService, private userService: UserService) { }
   
   ngOnInit(): void {
     console.log('note page oninit')
@@ -29,6 +30,15 @@ export class NotesComponent implements OnInit {
         console.log(this.noteList[0]);
       },
       error: (err:any) => {
+        console.log(err);
+      }
+    });
+
+    this.userService.srcQry$.subscribe({
+      next: (res: string) => {
+        this.keyWordNote = res;
+      },
+      error: (err: any) => {
         console.log(err);
       }
     })
