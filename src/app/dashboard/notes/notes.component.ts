@@ -14,9 +14,10 @@ export class NotesComponent implements OnInit {
   desc:string = "";
   noteList : any;
   inputExpnToggle: boolean = true;
+  keyWordNote : string = "";
 
 
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: HttpService) { }
   
   ngOnInit(): void {
     console.log('note page oninit')

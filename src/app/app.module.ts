@@ -8,6 +8,7 @@ import { SidebarComponent } from './dashboard/sidebar/sidebar.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { NotesComponent } from './dashboard/notes/notes.component';
 import { MaterialModule } from './material/material.module';
+import { SearchNotePipe } from './pipe/search-note.pipe';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MaterialModule } from './material/material.module';
     NavbarComponent,
     SidebarComponent,
     DashboardComponent,
-    NotesComponent
+    NotesComponent,
+    SearchNotePipe,
   ],
   imports: [
     MaterialModule,

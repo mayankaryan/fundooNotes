@@ -26,10 +26,13 @@
 </div>
 
 <div class="note-cards">
-    <div class="singleCard" *ngFor="let note of noteList">
-        <p>{{note.title}}
-        <br>
-        {{note.description}}</p>
+    <div class="singleCard" *ngFor="let note  of noteList | searchNote: keyWordNote">
+        <!-- <div *ngIf="note | searchNote: keyWordNote "> -->
+            <p>
+                {{ note.title }}  <br>
+                {{note.description }}
+            </p>
+        <!-- </div> -->
     </div>
 
 </div>
