@@ -19,9 +19,11 @@ export class NotesComponent implements OnInit {
   constructor(private httpService: HttpService) {}
   
   ngOnInit(): void {
+    console.log('note page oninit')
+
     this.httpService.getAllNotes().subscribe({
       next: (res:any) => {
-        console.log('form page')
+        console.log('note page : next')
         this.noteList = res.data.data;
         console.log(this.noteList[0]);
       },

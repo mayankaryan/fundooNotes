@@ -6,9 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpService {
-  token : string = "";
+  
   constructor(private httpClient: HttpClient) { }
-  url: any = 'https://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList?access_token=';
 
   login(user: any): any {
     return this.httpClient.post(
@@ -20,14 +19,10 @@ export class HttpService {
     );
   }
 
-  getToken(token: string){
-    this.token = token;
-    this.url = this.url + token;
-    console.log('http gettoken: ' + this.token);
-  }
   getAllNotes(): any {
-    console.log(this.url);
-    return this.httpClient.get(this.url);
+    let access_token = (localStorage.getItem('access_token'));
+    console.log(access_token);
+    return this.httpClient.get(`https://fundoonotes.incubation.bridgelabz.com/api/notes/getNotesList?access_token=${access_token}`)    
   }
 
 }
