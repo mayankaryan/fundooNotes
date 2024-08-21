@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../services/http/http.service';
-import { error } from 'winston';
 import { Subject } from 'rxjs';
 
 @Component({
@@ -14,26 +13,28 @@ export class LoginComponent {
 
   page:string = "account";
   loginObj={"email":"","password":""};
-  userData: any;
+  userId : any;          // without ! code throwing unauthorised error while execution
 
   emailFunction() {
     console.log(this.loginObj.email);
     this.page = "password";
   }
   signinFunction() {
-    debugger;
     console.log(this.loginObj);
     
     this.httpService.login(this.loginObj).subscribe ({
       next: (res:any) => {
-        this.userData = res;
-        console.log(res);
-        console.log(this.userData);
+        this.userId = res.id;
+        this.sendToken();
+        this.httpService.getAllNotes();
       },
       error: (err: Error) => {
         console.log(err);
       }
     });
+  }
+  sendToken() {
+    this.httpService.getToken(this.userId);
   }
 
 
